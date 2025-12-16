@@ -2,9 +2,8 @@ name: Update Malafide Blocklist
 
 on:
   schedule:
-    # Draait elke dag om 06:00 UTC
     - cron: '0 6 * * *'
-  workflow_dispatch: # Handmatige trigger mogelijk
+  workflow_dispatch:
 
 jobs:
   update-blocklist:
@@ -13,6 +12,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+    
+    - name: List files (debug)
+      run: |
+        ls -la
+        pwd
     
     - name: Set up Python
       uses: actions/setup-python@v4
