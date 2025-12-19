@@ -43,7 +43,6 @@ def create_blocklist_content(urls):
     content += "! Title: Politie.nl Malafide Handelspartijen\n"
     content += "! Description: Blokkeerlijst van malafide webshops volgens politie.nl\n"
     content += "! Homepage: https://www.politie.nl/aangifte-of-melding-doen/bekende-malafide-handelspartijen.html\n"
-    content += f"! Last updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC\n"
     content += f"! Total entries: {len(urls)}\n"
     content += "!\n"
     content += "\n".join(urls)
