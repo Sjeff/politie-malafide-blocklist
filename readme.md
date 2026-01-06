@@ -14,7 +14,7 @@ The list contains domains of webshops and traders that have been identified as f
 
 Add the following URL as a custom filter:
 ```
-https://gist.github.com/Sjeff/b215b0c5e12c6d5ac725f618e2111c32
+https://gist.githubusercontent.com/Sjeff/b215b0c5e12c6d5ac725f618e2111c32/raw/politie-malafide-blocklist.txt
 ```
 
 **Steps:**
