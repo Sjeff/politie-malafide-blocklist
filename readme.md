@@ -36,6 +36,10 @@ This list is automatically updated daily at 06:00 UTC via GitHub Actions. Change
 
 All data comes from the official politie.nl website. This repository is not affiliated with or endorsed by the Dutch National Police.
 
+## Development
+
+This project was created with assistance from AI (Claude by Anthropic) for scripting and automation setup.
+
 ## License
 
 The data originates from a public government source. The script and automation are free to use.
