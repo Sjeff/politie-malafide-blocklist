@@ -14,7 +14,7 @@ The list contains domains of webshops and traders that have been identified as f
 
 Add the following URL as a custom filter:
 ```
-https://gist.githubusercontent.com/Sjeff/b215b0c5e12c6d5ac725f618e2111c32/raw/23da28a79fbe8223c66df29dcba560d68512ef1a/politie-malafide-blocklist.txt
+https://gist.github.com/Sjeff/b215b0c5e12c6d5ac725f618e2111c32
 ```
 
 **Steps:**
@@ -31,8 +31,6 @@ The list uses Adblock Plus format and works with most DNS-level blockers such as
 ## Automatic updates
 
 This list is automatically updated daily at 06:00 UTC via GitHub Actions. Changes on the politie.nl website are reflected in the blocklist within 24 hours.
-
-Last update: [automatically generated in the blocklist itself]
 
 ## Source
 
