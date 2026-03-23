@@ -21,8 +21,12 @@ jobs:
     
     - name: Install dependencies
       run: |
-        pip install requests beautifulsoup4
-    
+        pip install requests beautifulsoup4 pytest
+
+    - name: Run tests
+      run: |
+        pytest test_update_blocklist.py -v
+
     - name: Scrape and update gist
       env:
         GITHUB_TOKEN: ${{ secrets.GIST_TOKEN }}
