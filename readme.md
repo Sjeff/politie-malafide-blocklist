@@ -68,7 +68,7 @@ The list uses the **Adblock Plus format** (`||domain.nl^`) and is compatible wit
 | Manual trigger | Available via the Actions tab |
 | Change detection | Gist is only updated when new entries are detected |
 
-The GitHub Actions workflow runs on `ubuntu-latest` with Python 3.10 and automatically installs the required dependencies (`requests`, `beautifulsoup4`).
+The GitHub Actions workflow runs on `ubuntu-latest` with Python 3.10 and automatically installs the required dependencies (`requests`, `beautifulsoup4`). Unit tests run before each scrape — if a test fails, the Gist is not updated.
 
 ---
 
@@ -80,6 +80,7 @@ politie-malafide-blocklist/
 │   └── workflows/
 │       └── update-blocklist.yml   # GitHub Actions workflow (daily, 06:00 UTC)
 ├── update_blocklist.py            # Scraper + Gist updater
+├── test_update_blocklist.py       # Unit tests (domain validation, blocklist format)
 └── readme.md
 ```
 
@@ -120,6 +121,19 @@ The generated blocklist follows the **Adblock Plus 2.0** format:
 ||scammer.com^
 ...
 ```
+
+---
+
+## 🧪 Development
+
+### Running tests locally
+
+```bash
+pip install requests beautifulsoup4 pytest
+pytest test_update_blocklist.py -v
+```
+
+Tests cover domain validation logic and blocklist content formatting. No network calls are made during tests.
 
 ---
 
