@@ -1,3 +1,4 @@
+import re
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -6,6 +7,10 @@ from datetime import datetime
 # GitHub credentials uit environment variables
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 GIST_ID = os.environ.get('GIST_ID')
+
+
+def _is_valid_domain(text):
+    return bool(re.match(r'^[a-zA-Z0-9][a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}$', text))
 
 
 def scrape_urls():
@@ -31,7 +36,10 @@ def scrape_urls():
             break
 
         if in_url_section and text:
-            urls.append(f"||{text}^")
+            if _is_valid_domain(text):
+                urls.append(f"||{text}^")
+            else:
+                print(f"⚠ Ongeldig domein overgeslagen: {text!r}")
 
     return urls
 
