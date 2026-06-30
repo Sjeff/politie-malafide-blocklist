@@ -6,6 +6,9 @@ on:
     - cron: '0 6 * * *'
   workflow_dispatch: # Handmatige trigger mogelijk
 
+permissions:
+  contents: read
+
 jobs:
   update-blocklist:
     runs-on: ubuntu-latest
